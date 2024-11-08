@@ -15,18 +15,20 @@ def scrapp1():
         with open("output.txt", "w") as file:
             #file.write("National Vulnerability Database")
             for item in vulns:
+                # Find and remove version
                 versions = item.find_all("td", attrs={"nowrap": "nowrap"})
                 for v in versions:    
                     v.extract()
 
-                # Obtener ID y descrip
+                # Obtein ID, descrip y fecha
                 id_vuln = item.find("a").get_text().strip()
                 descrip_vuln = item.find("p").get_text().strip()
-                # Obtener fecha
                 date_vuln = item.find("span").get_text().strip()
+                
                 plain_text = item.get_text()
                 file.write(plain_text)
 
+                # Delete AM/PM
                 date_vuln = date_vuln[:-6]
                 date_time_obj = datetime.strptime(date_vuln, "%B %d, %Y; %I:%M:%S %p")
                 formated_date = date_time_obj.strftime("%m/%d/%Y %H:%M:%S")

@@ -1,140 +1,207 @@
 
-CVE-2024-10417
+CVE-2024-50592
 
-A vulnerability was found in code-projects Blood Bank Management System 1.0. It has been classified as critical. Affected is an unknown function of the file /file/delete.php. The manipulation of the argument bid leads to sql injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. Published:
-October 27, 2024; 9:15:02 AM -0400
+An attacker with local access the to medical office computer can 
+escalate his Windows user privileges to "NT AUTHORITY\SYSTEM" by 
+exploiting a race condition in the Elefant Update Service during the 
+repair or update process. When using the repair function, the service queries the server for a 
+list of files and their hashes. In addition, instructions to execute 
+binaries to finalize the repair process are included. The executables are executed as "NT AUTHORITY\SYSTEM" after they are 
+copied over to the user writable installation folder (C:\Elefant1). This
+ means that a user can overwrite either "PostESUUpdate.exe" or 
+"Update_OpenJava.exe" in the time frame after the copy and before the 
+execution of the final repair step. The overwritten executable is then executed as "NT AUTHORITY\SYSTEM". Published:
+November 08, 2024; 8:15:03 AM -0500
 
 
 
-CVE-2024-10416
+CVE-2024-50593
 
-A vulnerability was found in code-projects Blood Bank Management System 1.0 and classified as critical. This issue affects some unknown processing of the file /file/cancel.php. The manipulation of the argument reqid leads to sql injection. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used. Published:
-October 27, 2024; 9:15:02 AM -0400
+An attacker with local access to the medical office computer can 
+access restricted functions of the Elefant Service tool by using a 
+hard-coded "Hotline" password in the Elefant service binary, which is shipped with the software. Published:
+November 08, 2024; 7:15:15 AM -0500
 
 
 
-CVE-2024-10415
+CVE-2024-50591
 
-A vulnerability has been found in code-projects Blood Bank Management System 1.0 and classified as critical. This vulnerability affects unknown code of the file /file/accept.php. The manipulation of the argument reqid leads to sql injection. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. Published:
-October 27, 2024; 8:15:02 AM -0400
+An attacker with local access the to medical office computer can 
+escalate his Windows user privileges to "NT AUTHORITY\SYSTEM" by 
+exploiting a command injection vulnerability in the Elefant Update 
+Service. The command injection can be exploited by communicating with 
+the Elefant Update Service which is running as "SYSTEM" via Windows 
+Named Pipes.The Elefant Software Updater (ESU) consists of two components. An ESU
+ service which runs as "NT AUTHORITY\SYSTEM" and an ESU tray client 
+which communicates with the service to update or repair the installation
+ and is running with user permissions. The communication is implemented 
+using named pipes. A crafted message of type 
+"MessageType.SupportServiceInfos" can be sent to the local ESU service 
+to inject commands, which are then executed as "NT AUTHORITY\SYSTEM". Published:
+November 08, 2024; 7:15:14 AM -0500
 
 
 
-CVE-2024-10414
+CVE-2024-50590
 
-A vulnerability, which was classified as problematic, was found in PHPGurukul Vehicle Record System 1.0. This affects an unknown part of the file /admin/edit-brand.php. The manipulation of the argument Brand Name leads to cross site scripting. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used. The initial researcher advisory mentions the parameter "phone_number" to be affected. But this might be a mistake because the textbox field label is "Brand Name". Published:
-October 27, 2024; 7:15:02 AM -0400
+Attackers with local access to the medical office computer can 
+escalate their Windows user privileges to "NT AUTHORITY\SYSTEM" by 
+overwriting one of two Elefant service binaries with weak permissions. The default installation directory of Elefant is "C:\Elefant1" which is 
+writable for all users. In addition, the Elefant installer registers two
+ Firebird database services which are running as “NT AUTHORITY\SYSTEM”. 
 
+Path: C:\Elefant1\Firebird_2\bin\fbserver.exe
 
+Path: C:\Elefant1\Firebird_2\bin\fbguard.exe
 
-CVE-2024-10413
 
-A vulnerability, which was classified as critical, has been found in SourceCodester Online Hotel Reservation System 1.0. Affected by this issue is the function upload of the file /guest/update.php. The manipulation of the argument image leads to unrestricted upload. The attack may be launched remotely. The exploit has been disclosed to the public and may be used. Published:
-October 27, 2024; 6:15:02 AM -0400
+Both service binaries are user writable. This means that a local 
+attacker can rename one of the service binaries, replace the service 
+executable with a new executable, and then restart the system. Once the 
+system has rebooted, the new service binary is executed as "NT 
+AUTHORITY\SYSTEM". Published:
+November 08, 2024; 7:15:14 AM -0500
 
 
 
-CVE-2024-10412
+CVE-2024-50589
 
-A vulnerability was found in Poco-z Guns-Medical 1.0. It has been declared as problematic. Affected by this vulnerability is the function upload of the file /mgr/upload of the component File Upload. The manipulation of the argument picture leads to cross site scripting. The attack can be launched remotely. Published:
-October 27, 2024; 4:15:02 AM -0400
+An unauthenticated attacker with access to the local network of the 
+medical office can query an unprotected Fast Healthcare Interoperability
+ Resources (FHIR) API to get access to sensitive electronic health 
+records (EHR). Published:
+November 08, 2024; 7:15:14 AM -0500
 
 
 
-CVE-2024-50602
+CVE-2024-10325
 
-An issue was discovered in libexpat before 2.6.4. There is a crash within the XML_ResumeParser function because XML_StopParser can stop/suspend an unstarted parser. Published:
-October 27, 2024; 1:15:04 AM -0400
+The Elementor Header & Footer Builder plugin for WordPress is vulnerable to Stored Cross-Site Scripting via REST API SVG File uploads in all versions up to, and including, 1.6.45 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with Author-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses the SVG file. Published:
+November 08, 2024; 7:15:14 AM -0500
 
 
 
-CVE-2024-10411
+CVE-2024-10839
 
-A vulnerability was found in SourceCodester Online Hotel Reservation System 1.0. It has been classified as critical. Affected is the function doCancelRoom/doCancel/doConfirm/doCancel/doCheckin/doCheckout of the file /marimar/admin/mod_room/controller.php. The manipulation of the argument id leads to sql injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. Published:
-October 27, 2024; 1:15:02 AM -0400
+Zohocorp ManageEngine SharePoint Manager Plus versions 4503 and prior are vulnerable to authenticated XML External Entity (XXE) in the Management option. Published:
+November 08, 2024; 6:15:03 AM -0500
 
 
 
-CVE-2024-10410
+CVE-2024-10187
 
-A vulnerability classified as critical was found in SourceCodester Online Hotel Reservation System 1.0. Affected by this vulnerability is the function upload of the file /admin/mod_room/controller.php?action=add. The manipulation of the argument image leads to unrestricted upload. The attack can be launched remotely. The exploit has been disclosed to the public and may be used. Published:
-October 27, 2024; 12:15:02 AM -0400
+The myCred – Loyalty Points and Rewards plugin for WordPress and WooCommerce – Give Points, Ranks, Badges, Cashback, WooCommerce rewards, and WooCommerce credits for Gamification plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's mycred_link shortcode in all versions up to, and including, 2.7.4 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Published:
+November 08, 2024; 5:15:03 AM -0500
 
 
 
-CVE-2024-10409
+CVE-2024-50588
 
-A vulnerability was found in code-projects Blood Bank Management 1.0 and classified as critical. This issue affects some unknown processing of the file /file/accept.php. The manipulation of the argument reqid leads to sql injection. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used. Published:
-October 26, 2024; 11:15:03 PM -0400
+An unauthenticated attacker with access to the local network of the 
+medical office can use known default credentials to gain remote DBA 
+access to the Elefant Firebird database. The data in the database 
+includes patient data and login credentials among other sensitive data. 
+In addition, this enables an attacker to create and overwrite arbitrary 
+files on the server filesystem with the rights of the Firebird database 
+("NT AUTHORITY\SYSTEM"). Published:
+November 08, 2024; 4:15:07 AM -0500
 
 
 
-CVE-2024-10408
+CVE-2024-24409
 
-A vulnerability has been found in code-projects Blood Bank Management up to 1.0 and classified as critical. This vulnerability affects unknown code of the file /abs.php. The manipulation of the argument search leads to sql injection. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. Published:
-October 26, 2024; 11:15:02 PM -0400
+Zohocorp ManageEngine ADManager Plus versions 7203 and prior are vulnerable to Privilege Escalation in the Modify Computers option. Published:
+November 08, 2024; 3:15:15 AM -0500
 
 
 
-CVE-2024-10407
+CVE-2024-11000
 
-A vulnerability, which was classified as critical, was found in SourceCodester Petrol Pump Management Software 1.0. This affects an unknown part of the file /admin/edit_customer.php. The manipulation of the argument id leads to sql injection. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used. Published:
-October 26, 2024; 8:15:12 PM -0400
+A vulnerability classified as problematic was found in CodeAstro Real Estate Management System 1.0. Affected by this vulnerability is an unknown functionality of the file /aboutedit.php of the component About Us Page. The manipulation of the argument aimage leads to unrestricted upload. The attack can be launched remotely. The exploit has been disclosed to the public and may be used. Published:
+November 08, 2024; 3:15:15 AM -0500
 
 
 
-CVE-2024-10406
+CVE-2024-10999
 
-A vulnerability, which was classified as critical, has been found in SourceCodester Petrol Pump Management Software 1.0. Affected by this issue is some unknown functionality of the file /admin/edit_fuel.php. The manipulation of the argument id leads to sql injection. The attack may be launched remotely. The exploit has been disclosed to the public and may be used. Published:
-October 26, 2024; 6:15:02 PM -0400
+A vulnerability classified as problematic has been found in CodeAstro Real Estate Management System 1.0. Affected is an unknown function of the file /aboutadd.php of the component About Us Page. The manipulation of the argument aimage leads to unrestricted upload. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. Published:
+November 08, 2024; 3:15:14 AM -0500
 
 
 
-CVE-2020-26311
+CVE-2024-10998
 
-Useragent is a user agent parser for Node.js. All versions as of time of publication contain one or more regular expressions that are vulnerable to Regular Expression Denial of Service (ReDoS). As of time of publication, no patches are available. Published:
-October 26, 2024; 5:15:14 PM -0400
+A vulnerability was found in 1000 Projects Bookstore Management System 1.0. It has been rated as critical. This issue affects some unknown processing of the file /admin/process_category_add.php. The manipulation of the argument cat leads to sql injection. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used. Published:
+November 08, 2024; 3:15:12 AM -0500
 
 
 
-CVE-2020-26310
+CVE-2024-10997
 
-Validate.js provides a declarative way of validating javascript objects. All versions as of 30 November 2020 contain one or more regular expressions that are vulnerable to Regular Expression Denial of Service (ReDoS). As of time of publication, it is unknown if any patches are available. Published:
-October 26, 2024; 5:15:14 PM -0400
+A vulnerability was found in 1000 Projects Bookstore Management System 1.0. It has been declared as critical. This vulnerability affects unknown code of the file /book_list.php. The manipulation of the argument id leads to sql injection. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. Published:
+November 08, 2024; 2:15:08 AM -0500
 
 
 
-CVE-2020-26309
+CVE-2024-10996
 
-Validate.js provides a declarative way of validating javascript objects. Versions 0.11.3 and prior contain one or more regular expressions that are vulnerable to Regular Expression Denial of Service (ReDoS). As of time of publication, it is unknown if any patches are available. Published:
-October 26, 2024; 5:15:14 PM -0400
+A vulnerability was found in 1000 Projects Bookstore Management System 1.0. It has been classified as critical. This affects an unknown part of the file /admin/process_category_edit.php. The manipulation of the argument cat leads to sql injection. It is possible to initiate the attack remotely. The exploit has been disclosed to the public and may be used. Published:
+November 08, 2024; 2:15:08 AM -0500
 
 
 
-CVE-2020-26308
+CVE-2024-10995
 
-Validate.js provides a declarative way of validating javascript objects. Versions 0.13.1 and prior contain one or more regular expressions that are vulnerable to Regular Expression Denial of Service (ReDoS). As of time of publication, no known patches are available. Published:
-October 26, 2024; 5:15:14 PM -0400
+A vulnerability was found in Codezips Hospital Appointment System 1.0 and classified as critical. Affected by this issue is some unknown functionality of the file /removeDoctorResult.php. The manipulation of the argument Name leads to sql injection. The attack may be launched remotely. The exploit has been disclosed to the public and may be used. Published:
+November 08, 2024; 2:15:07 AM -0500
 
 
 
-CVE-2020-26307
+CVE-2024-10269
 
-HTML2Markdown is a Javascript implementation for converting HTML to Markdown text. All available versions contain one or more regular expressions that are vulnerable to Regular Expression Denial of Service (ReDoS). As of time of publication, no known patches are available. Published:
-October 26, 2024; 5:15:13 PM -0400
+The Easy SVG Support plugin for WordPress is vulnerable to Stored Cross-Site Scripting via REST API SVG File uploads in all versions up to, and including, 3.7 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with Author-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses the SVG file. Published:
+November 08, 2024; 2:15:05 AM -0500
 
 
 
-CVE-2020-26306
+CVE-2024-7982
 
-Knwl.js is a Javascript library that parses through text for dates, times, phone numbers, emails, places, and more. Versions 1.0.2 and prior contain one or more regular expressions that are vulnerable to Regular Expression Denial of Service (ReDoS). As of time of publication, no known patches are available. Published:
-October 26, 2024; 5:15:13 PM -0400
+The Registrations for the Events Calendar  WordPress plugin before 2.12.4 does not sanitise and escape some parameters when accepting event registrations, which could allow unauthenticated users to perform Cross-Site Scripting attacks. Published:
+November 08, 2024; 1:15:17 AM -0500
 
 
 
-CVE-2020-26305
+CVE-2024-50211
 
-CommonRegexJS is a CommonRegex port for JavaScript. All available versions contain one or more regular expressions that are vulnerable to Regular Expression Denial of Service (ReDoS). As of time of publication, no known patches are available. Published:
-October 26, 2024; 5:15:13 PM -0400
+In the Linux kernel, the following vulnerability has been resolved:
+
+udf: refactor inode_bmap() to handle error
+
+Refactor inode_bmap() to handle error since udf_next_aext() can return
+error now. On situations like ftruncate, udf_extend_file() can now
+detect errors and bail out early without resorting to checking for
+particular offsets and assuming internal behavior of these functions. Published:
+November 08, 2024; 1:15:17 AM -0500
+
+
+
+CVE-2024-50210
+
+In the Linux kernel, the following vulnerability has been resolved:
+
+posix-clock: posix-clock: Fix unbalanced locking in pc_clock_settime()
+
+If get_clock_desc() succeeds, it calls fget() for the clockid's fd,
+and get the clk->rwsem read lock, so the error path should release
+the lock to make the lock balance and fput the clockid's fd to make
+the refcount balance and release the fd related resource.
+
+However the below commit left the error path locked behind resulting in
+unbalanced locking. Check timespec64_valid_strict() before
+get_clock_desc() to fix it, because the "ts" is not changed
+after that.
+
+[pabeni@redhat.com: fixed commit message typo] Published:
+November 08, 2024; 1:15:17 AM -0500
 
 
